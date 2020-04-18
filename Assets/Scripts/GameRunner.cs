@@ -6,7 +6,7 @@ public class GameRunner : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
 
-    // Start is called before the first frame update
+    // Start
     void Start()
     {
         healthBar.setHealth();
