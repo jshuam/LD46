@@ -6,7 +6,7 @@ public class GameRunner : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar = null;
 
-    // Start is called before the first frame update
+    // Start
     void Start()
     {
         healthBar.setHealth();
@@ -25,4 +25,5 @@ public class GameRunner : MonoBehaviour
             healthBar.HealDamage(1);
         }
     }
+    
 }
