@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 593271330}
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 593271332}
 --- !u!4 &97043476
 Transform:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 593271329}
   - component: {fileID: 593271332}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: Accusation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -638,7 +638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dialogue
+  m_Text: 
 --- !u!222 &593271331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 2033020667}
   - component: {fileID: 2033020666}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Dialogues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

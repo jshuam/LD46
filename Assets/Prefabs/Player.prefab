@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
-    speed: 0
+    speed: 2
     sentences:
     - Do you know how long you've been gone?!
 --- !u!1 &2062566839
