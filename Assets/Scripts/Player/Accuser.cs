@@ -6,12 +6,13 @@ public class Accuser : MonoBehaviour
     [SerializeField] private DialogueTrigger dialogueTrigger = null;
     [SerializeField] private Camera mainCamera = null;
 
+    private FireStarterManager _fireStarterManager = null;
     private RaycastHit _hit;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _fireStarterManager = FindObjectOfType<FireStarterManager>();
     }
 
     // Update is called once per frame
@@ -46,10 +47,16 @@ public class Accuser : MonoBehaviour
         {
             dialogueTrigger.TriggerDialogue();
 
-            // if (_hit.collider != null && _hit.collider.gameObject.GetComponent<FireStarter>())
-            // {
-            //     _hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-            // }
+            if (_hit.collider != null)
+            {
+                if (_hit.collider.gameObject.GetComponent<FireStarter>() == null)
+                {
+                    _fireStarterManager.SpreadNegativity();
+                }
+
+                // _hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                Destroy(_hit.collider.gameObject, 2.0f);
+            }
         }
     }
 }
