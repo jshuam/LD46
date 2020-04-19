@@ -6,7 +6,6 @@ using System.Linq;
 public class FireManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> flamePrefabs = null;
-
     private System.Random _random;
 
     // Start is called before the first frame update

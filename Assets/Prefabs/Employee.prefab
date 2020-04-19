@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8389247928663996590}
   - component: {fileID: 8389247928663996498}
   - component: {fileID: 1333099739}
-  - component: {fileID: 8751442737689592652}
   m_Layer: 0
   m_Name: Employee
   m_TagString: Employee
@@ -129,15 +128,3 @@ MonoBehaviour:
     name: Employee
     sentences:
     - ...?
---- !u!114 &8751442737689592652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389247928663996589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d92cb708dcc661b44a1d2aef043031a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
