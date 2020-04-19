@@ -1100,6 +1100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdf101722ae73c46b940f0d388eadce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxSpeed: 15
+  _maxWalkWaitTime: 5
+  _destinationThreshold: 10
+  _maxRotSpeed: 180
   checkpoints:
   - {fileID: 915595795}
   - {fileID: 2121911684}

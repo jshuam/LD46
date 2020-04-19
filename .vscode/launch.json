@@ -7,11 +7,7 @@
         {
             "name": "Unity Editor",
             "type": "unity",
-<<<<<<< HEAD
-            "path": "/c:/Users/Joshua/Dev/LD46/Dying Company/Library/EditorInstance.json",
-=======
-            "path": "/c:/Users/Phillip/Documents/GitHub/LD46/Library/EditorInstance.json",
->>>>>>> c8d612c306bfacd052ba4d2f883d3a652fe57a99
+            "path": "/c:/Users/ben/Projects/LD46/Library/EditorInstance.json",
             "request": "launch"
         },
         {
