@@ -420,6 +420,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593271327}
   m_CullTransparentMesh: 0
+--- !u!1 &768349391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1375987165808562526, guid: dd1b23b5b48334b4db3c16764cb40c8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 983453310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &768349399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768349391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a535bccef5c0ca4698acdaf94ee2cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  putOutFireText: {fileID: 1388545708}
 --- !u!1001 &801926052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 708401430, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Name
+      value: AccuseText
+      objectReference: {fileID: 0}
     - target: {fileID: 2062566843, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -646,6 +669,89 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+--- !u!224 &1009194931 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2062566843, guid: dd1b23b5b48334b4db3c16764cb40c8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 983453310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1388545708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388545711}
+  - component: {fileID: 1388545710}
+  - component: {fileID: 1388545709}
+  m_Layer: 5
+  m_Name: FirePutOutText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1388545709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388545708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 26
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Put out (F)
+--- !u!222 &1388545710
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388545708}
+  m_CullTransparentMesh: 0
+--- !u!224 &1388545711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388545708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1009194931}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1532845388
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,9 +967,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14eeb97311db23148b5581d65fe44eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefabs:
-  - {fileID: 2009153634398236414, guid: 2e8efd29b493e954dadeae10df19274d, type: 3}
-  - {fileID: 3806695810569152992, guid: 77ff66d626527e844a6a81e52e65b17d, type: 3}
+  flamePrefab: {fileID: 3806695810569152992, guid: 77ff66d626527e844a6a81e52e65b17d,
+    type: 3}
+  noCollisionFlamePrefab: {fileID: 5716239713985295339, guid: c92502844ebfac240854b0eeffc41a45,
+    type: 3}
 --- !u!4 &2013381434
 Transform:
   m_ObjectHideFlags: 0

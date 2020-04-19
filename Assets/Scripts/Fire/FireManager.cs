@@ -5,27 +5,31 @@ using System.Linq;
 
 public class FireManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> flamePrefabs = null;
+    [SerializeField] private GameObject flamePrefab = null;
 
-    private System.Random _random;
+    [SerializeField] private GameObject noCollisionFlamePrefab = null;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        // CreateFire(-3, -6, flamePrefabs[random.Next(flamePrefabs.Count)]);
-        // CreateFire(3, -6, flamePrefabs[random.Next(flamePrefabs.Count)]);
-        _random = new System.Random();
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     // Start is called before the first frame update
-    public void CreateFire(float x, float z)
+    public void CreateFire(float x, float z, bool collide = true)
     {
-        Instantiate(flamePrefabs[_random.Next(flamePrefabs.Count)], new Vector3(x, 2, z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
+        if( collide )
+        {
+            Instantiate( flamePrefab, new Vector3(x, 2, z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f) );
+        }
+        else
+        {
+            Instantiate( noCollisionFlamePrefab, new Vector3(x, 2, z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f) );
+        }
     }
 }
