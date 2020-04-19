@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // Update is called once per frame
@@ -45,6 +48,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = startPos;
         }
+    }
+    
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        Debug.Log("bruh");
     }
 
     void FixedUpdate()

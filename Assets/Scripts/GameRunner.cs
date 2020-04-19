@@ -23,4 +23,5 @@ public class GameRunner : MonoBehaviour
             healthBar.HealDamage(1);
         }
     }
+    
 }
