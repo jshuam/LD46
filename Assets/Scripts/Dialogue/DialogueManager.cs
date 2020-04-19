@@ -7,7 +7,6 @@ public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
     public Queue<string> sentences;
-    private bool anyDialogue = false;
     public CanvasGroup canvasGroup;
 
     // Start is called before the first frame update
@@ -37,6 +36,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        //Push any current existing text up here
         dialogueText.text = sentences.Dequeue();
     }
 
