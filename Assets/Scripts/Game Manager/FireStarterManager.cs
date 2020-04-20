@@ -31,4 +31,16 @@ public class FireStarterManager : MonoBehaviour
             _currentFireStarters++;
         }
     }
+
+    public void FireStarterRemoved(){
+        _currentFireStarters--;
+    }
+
+    public bool checkIfVictory(){
+        if(_currentFireStarters == 0){
+            return true;
+        }
+
+        return false;
+    }
 }

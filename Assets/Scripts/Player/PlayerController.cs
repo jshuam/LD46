@@ -50,29 +50,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = startPos;
         }
-
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            HealDamage(10);
-        }
-
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(10);
-        }
     }
     
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
-        Debug.Log("bruh");
-    }
 
-    void TakeDamage(int damage){
-        healthBar.TakeDamage(damage);
-    } 
-
-    void HealDamage(int damage){
-        healthBar.HealDamage(damage);
     }
 
     void FixedUpdate()
