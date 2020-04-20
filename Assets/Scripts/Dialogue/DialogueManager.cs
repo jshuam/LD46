@@ -8,15 +8,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogue;
     public Queue<string> sentences;
     
-    private CanvasGroup canvasGroup;
-    private Text dialogueText;
+    private CanvasGroup _canvasGroup;
+    private Text _dialogueText;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
-        dialogueText = dialogue.GetComponent<Text>();
-        canvasGroup = dialogue.GetComponent<CanvasGroup>();
+        _dialogueText = dialogue.GetComponent<Text>();
+        _canvasGroup = dialogue.GetComponent<CanvasGroup>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue("<color=yellow>" + dialogue.name + "</color>: " + sentence);
         }
 
-        if( canvasGroup.alpha == 0 )
+        if( _canvasGroup.alpha == 0 )
         {
             StartCoroutine(FadeDialogueToFullAlpha(0.7f));
             InvokeRepeating("DisplayNextSentence", 0.0f, dialogue.speed);
@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        dialogueText.text = sentences.Dequeue();
+        _dialogueText.text = sentences.Dequeue();
     }
 
     void EndDialogue()
@@ -52,20 +52,20 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator FadeDialogueToFullAlpha(float time)
     {
-        canvasGroup.alpha = 0;
-        while (canvasGroup.alpha < 1.0f)
+        _canvasGroup.alpha = 0;
+        while (_canvasGroup.alpha < 1.0f)
         {
-            canvasGroup.alpha = canvasGroup.alpha + (Time.deltaTime / time);
+            _canvasGroup.alpha = _canvasGroup.alpha + (Time.deltaTime / time);
             yield return null;
         }
     }
 
     public IEnumerator FadeDialogueToZeroAlpha(float time)
     {
-        canvasGroup.alpha = 1;
-        while (canvasGroup.alpha > 0.0f)
+        _canvasGroup.alpha = 1;
+        while (_canvasGroup.alpha > 0.0f)
         {
-            canvasGroup.alpha = canvasGroup.alpha - (Time.deltaTime / time);
+            _canvasGroup.alpha = _canvasGroup.alpha - (Time.deltaTime / time);
             yield return null;
         }
     }

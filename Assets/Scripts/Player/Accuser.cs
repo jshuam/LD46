@@ -54,7 +54,6 @@ public class Accuser : MonoBehaviour
                     _fireStarterManager.SpreadNegativity();
                 }
 
-                // _hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 Destroy(_hit.collider.gameObject, 2.0f);
             }
         }
