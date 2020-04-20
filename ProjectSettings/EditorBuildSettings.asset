@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FireStarter.unity
     guid: 48049adc2a2dacc45bd4cc2212f7a35c
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: f3a81f7b41344154f8a34fa52baf41d9
   m_configObjects: {}
