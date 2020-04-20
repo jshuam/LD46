@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class EmployeeManager : MonoBehaviour
 {
-    static readonly string[] names = { "Poopy Eyes", "Two Face", "Monster Monster", "Stinky Shrek", "Cancer", "Giga Chad", "Emperor" };
-    static readonly string[] roles = { "Master", "Nemesis", "Loyal Crook", "Stinky Crook", "Cancer Crook", "Padawan" };
+    [SerializeField] private GameObject spawneePreFab = null;
     [SerializeField] private Transform _employeesParent = null;
     [SerializeField] private int _spawneeSize = 0;
 
@@ -16,7 +15,8 @@ public class EmployeeManager : MonoBehaviour
     [SerializeField] private bool _isRespawningEnabled = false;
     [SerializeField] private List<GameObject> spawnPoints = new List<GameObject>();
     [SerializeField] private List<GameObject> destinationPoints = new List<GameObject>();
-    [SerializeField] private GameObject spawneePreFab = null;
+    [SerializeField] private List<string> names = new List<string>();
+    [SerializeField] private List<string> roles = new List<string>();
 
     private FireStarterManager _fireStartermanager = null;
 
@@ -63,7 +63,7 @@ public class EmployeeManager : MonoBehaviour
         for (var i = _employees.Count; i < end; i++)
         {
             var spawnPoint = spawnPoints[_rand.Next(spawnPoints.Count)];
-            SpawnEmployee(randomNames[i % randomNames.Length], roles[_rand.Next(roles.Length)], spawnPoint.transform.position);
+            SpawnEmployee(randomNames[i % randomNames.Length], roles[_rand.Next(roles.Count)], spawnPoint.transform.position);
         }
         if (!_isInitialSpawningComplete && _employees.Count == _spawneeSize) _isInitialSpawningComplete = true;
     }
@@ -73,7 +73,7 @@ public class EmployeeManager : MonoBehaviour
         var employeeGameObj = Instantiate(spawneePreFab, spawnPoint, Quaternion.identity, _employeesParent);
         var employeeScript = employeeGameObj.GetComponent<EmployeeController>();
 
-        employeeScript.Initialise(name, role,  Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+        employeeScript.Initialise(name, role, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
         _employees.Add(employeeScript);
     }
 }

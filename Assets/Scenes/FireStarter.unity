@@ -1246,6 +1246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdf101722ae73c46b940f0d388eadce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawneePreFab: {fileID: 500621502521290327, guid: 8651403d60277d84a8eddbec4f5ef234,
+    type: 3}
   _employeesParent: {fileID: 201527557}
   _spawneeSize: 10
   _batchSize: 0
@@ -1267,8 +1269,21 @@ MonoBehaviour:
   - {fileID: 1291850964}
   - {fileID: 2099498296}
   - {fileID: 714973928}
-  spawneePreFab: {fileID: 500621502521290327, guid: 8651403d60277d84a8eddbec4f5ef234,
-    type: 3}
+  names:
+  - Poopy Eyes
+  - Two Face
+  - Push Over
+  - Stinky Shrek
+  - Cancer
+  - Giga Chad
+  roles:
+  - Master
+  - Nemesis
+  - Loyal Crook
+  - Stinky Crook
+  - Cancer Crook
+  - Crook
+  - Padawan
 --- !u!1 &1532845388
 GameObject:
   m_ObjectHideFlags: 0

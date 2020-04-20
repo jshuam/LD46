@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class EmployeeController : MonoBehaviour
 {
-    public string fullName;
-    public string role;
     public NavMeshAgent agent;
+    public TextMesh employeeDetails = null;
 
-    [SerializeField] private int _maxSpeed;
-    [SerializeField] private int _maxWalkWaitTime;
-    [SerializeField] private float _maxRotSpeed;
-    [SerializeField] private float _destinationReachedThreshold;
+    [SerializeField] private int _maxSpeed = 5;
+    [SerializeField] private int _maxWalkWaitTime = 10;
+    [SerializeField] private float _maxRotSpeed = 180;
+    [SerializeField] private float _destinationReachedThreshold = 10;
+    [SerializeField] private float _detailsDistanceThreshold = 200;
 
     private Vector3 _destination;
     private float _speed;
@@ -24,22 +24,19 @@ public class EmployeeController : MonoBehaviour
     void Start()
     {
         _isWalking = false;
-
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (_isWalking && CheckDestinationReached())
-        {
-            _isWalking = false;
-        }
+        DisplayEmployeeDetails();
+        UpdateWalkingStatus();
     }
 
     public void Initialise(string name, string role, Color color)
     {
-        fullName = name;
-        this.role = role;
+        employeeDetails.text = $"{name} <{role}>";
+        employeeDetails.color = color;
         _speed = Random.Range(1, _maxSpeed);
         _walkWaitTime = Random.Range(1, _maxWalkWaitTime);
         agent.speed = _speed;
@@ -56,13 +53,38 @@ public class EmployeeController : MonoBehaviour
     public void StopMate(Vector3 directionToFace)
     {
         agent.SetDestination(transform.position);
-        var targetRotation = Quaternion.LookRotation(directionToFace - transform.position,Vector3.up);
+        var targetRotation = Quaternion.LookRotation(directionToFace - transform.position, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 3.0f);
     }
 
     public void GoOnMate()
     {
         agent.SetDestination(_destination);
+    }
+
+    void UpdateWalkingStatus()
+    {
+        if (_isWalking && CheckDestinationReached())
+        {
+            _isWalking = false;
+        }
+    }
+
+    void DisplayEmployeeDetails()
+    {
+        // Only display text if camera is within a certain range
+        if (Vector3.SqrMagnitude(employeeDetails.transform.position - Camera.main.transform.position) < _detailsDistanceThreshold)
+        {
+            employeeDetails.gameObject.SetActive(true);
+
+            // Rotate text to face camera
+            employeeDetails.transform.LookAt(Camera.main.transform.position);
+            employeeDetails.transform.Rotate(0, 180, 0);
+        }
+        else
+        {
+            employeeDetails.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator MoveTo(Vector3 target)
