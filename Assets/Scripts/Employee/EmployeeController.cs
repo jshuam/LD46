@@ -74,7 +74,7 @@ public class EmployeeController : MonoBehaviour
         var walkWait = Random.Range(1, _maxWalkWaitTime);
         yield return new WaitForSeconds(walkWait);
 
-        agent.SetDestination(_destination);
+        if (agent != null) agent.SetDestination(_destination);
     }
 
     public void SetManager(EmployeeManager manager)
