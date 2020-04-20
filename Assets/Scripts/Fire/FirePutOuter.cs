@@ -3,12 +3,13 @@
 public class FirePutOuter : MonoBehaviour
 {
     [SerializeField] private GameObject putOutFireText = null;
+    private FireManager _fireManager = null;
     private RaycastHit _hit;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _fireManager = FindObjectOfType<FireManager>();
     }
 
     void Update()
@@ -36,7 +37,9 @@ public class FirePutOuter : MonoBehaviour
     {
         if (putOutFireText.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
-            Destroy(_hit.transform.gameObject);
+            GameObject fire = _hit.transform.gameObject; 
+            Destroy(fire);
+            _fireManager.PutOutFire(fire);
         }
     }
 }
