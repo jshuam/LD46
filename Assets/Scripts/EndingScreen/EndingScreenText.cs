@@ -22,9 +22,9 @@ public class EndingScreenText : MonoBehaviour
     public IEnumerator ExampleCoroutine()
     {
         _text.text = "Congratulations";
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         _text.text = "You have successfully removed the cancer";
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         _text.text = "I'm sure this won't have any long running effects";
     }
 }
