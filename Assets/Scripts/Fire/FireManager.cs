@@ -9,7 +9,7 @@ public class FireManager : MonoBehaviour
 
     [SerializeField] private GameObject noCollisionFlamePrefab = null;
 
-    [SerializeField] private GameObject healthBar = null;
+    [SerializeField] private HealthBar healthBar = null;
 
     private List<GameObject> _fires = new List<GameObject>();
 
@@ -29,8 +29,7 @@ public class FireManager : MonoBehaviour
     {
         if (healthBar != null)
         {
-            var healthScript = (HealthBar)healthBar.GetComponent(typeof(HealthBar));
-            healthScript.TakeDamage((float)_fires.Count);
+            healthBar.TakeDamage(_fires.Count);
         }
     }
 
