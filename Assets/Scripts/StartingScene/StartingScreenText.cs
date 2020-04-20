@@ -27,7 +27,7 @@ public class StartingScreenText : MonoBehaviour
         yield return new WaitForSeconds(2);
         _text.text = "We only have so much of a run way to land this plane";
         yield return new WaitForSeconds(2);
-        _text.text = "Find them report them asap other wise your stocks are gone!";
+        _text.text = "Find them report them asap otherwise your stocks are gone!";
         yield return new WaitForSeconds(2);
     }
 }
