@@ -11,6 +11,7 @@ public class Accuser : MonoBehaviour
     private FireStarterManager _fireStarterManager = null;
     private RaycastHit _hit;
     private EmployeeController stoppedEmployee = null;
+    private bool _isAccusing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,9 @@ public class Accuser : MonoBehaviour
 
     private void Accuse()
     {
+        if (_isAccusing)
+            return;
+
         if (accuseText.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             dialogueTrigger.TriggerDialogue();
@@ -74,9 +78,15 @@ public class Accuser : MonoBehaviour
                     }
                 }
 
+                _isAccusing = true;
                 _hit.collider.gameObject.GetComponent<EmployeeController>().UrFired();
                 Destroy(_hit.collider.gameObject, 2.0f);
             }
         }
+    }
+
+    private void EndAccuse()
+    {
+        _isAccusing = false;
     }
 }
