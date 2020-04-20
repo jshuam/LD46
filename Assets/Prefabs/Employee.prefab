@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 500621502521290330}
   - component: {fileID: 500621502521290329}
   - component: {fileID: 500621502521290328}
-  - component: {fileID: 9207690156173044201}
   - component: {fileID: -6393139099102359727}
   - component: {fileID: 4086116584130352855}
   - component: {fileID: 1350325191429650253}
@@ -98,22 +97,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &9207690156173044201
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500621502521290327}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!114 &-6393139099102359727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: 
   role: 
-  agent: {fileID: 0}
-  _maxSpeed: 0
-  _maxWalkWaitTime: 0
-  _destinationReachedThreshold: 0
-  _rotSpeed: 0
+  agent: {fileID: 4086116584130352855}
+  _maxSpeed: 5
+  _maxWalkWaitTime: 10
+  _maxRotSpeed: 180
+  _destinationReachedThreshold: 10
 --- !u!195 &4086116584130352855
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,7 +125,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 500621502521290327}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -167,7 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c125d331ae9f49a3e064e7b8e5151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    speed: 0
-    sentences: []
+  dialogues: []
