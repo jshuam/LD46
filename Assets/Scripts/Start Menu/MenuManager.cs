@@ -10,7 +10,11 @@ public class MenuManager : MonoBehaviour
 
     public void StartGameScene()
     {
-        Destroy(FindObjectOfType<MusicManager>().gameObject);
+        var musicManager = FindObjectOfType<MusicManager>()?.gameObject;
+        if( musicManager != null )
+        { 
+            Destroy( musicManager );
+        }
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
