@@ -15,7 +15,7 @@ public class FireStarter : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * 2.5f, Color.blue);
+        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * 3.5f, Color.blue);
     }
 
     void RandomFire()
@@ -23,7 +23,7 @@ public class FireStarter : MonoBehaviour
         if (_random.Next(100) > 60)
         {
             RaycastHit hit;
-            Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 2.5f);
+            Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 3.5f);
 
             if (hit.collider == null)
             {
