@@ -45,4 +45,12 @@ public class FireManager : MonoBehaviour
             Instantiate(noCollisionFlamePrefab, new Vector3(position.x, position.y, position.z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
         }
     }
+
+    // Start is called before the first frame update
+    public GameObject CreateFireWithObject(Vector3 position)
+    {
+        var fire = Instantiate(flamePrefab, new Vector3(position.x, position.y + 2, position.z + 2), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
+        _fires.Add(fire);
+        return fire;
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class Accuser : MonoBehaviour
@@ -63,15 +64,17 @@ public class Accuser : MonoBehaviour
                 {
                     _fireStarterManager.SpreadNegativity();
                 }
-                else 
+                else
                 {
                     _fireStarterManager.FireStarterRemoved();
                     // it was a firestarter, so decrement the count and check to see if victory
-                    if(_fireStarterManager.checkIfVictory()){
+                    if (_fireStarterManager.checkIfVictory())
+                    {
                         SceneManager.LoadScene(5, LoadSceneMode.Single);
                     }
                 }
 
+                _hit.collider.gameObject.GetComponent<EmployeeController>().UrFired();
                 Destroy(_hit.collider.gameObject, 2.0f);
             }
         }
