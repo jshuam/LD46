@@ -38,7 +38,7 @@ public class FireManager : MonoBehaviour
     {
         if (collide)
         {
-            _fires.Add(Instantiate(flamePrefab, new Vector3(position.x, position.y + 2, position.z + 2), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f)));
+            _fires.Add(Instantiate(flamePrefab, new Vector3(position.x, position.y + 2, position.z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f)));
         }
         else
         {
