@@ -49,7 +49,7 @@ public class EmployeeManager : MonoBehaviour
             if (!employee.IsWalking())
             {
                 var checkpoint = destinationPoints[_rand.Next(destinationPoints.Count)];
-                StartCoroutine(employee.MoveTo(checkpoint.transform.position));
+                // StartCoroutine(employee.MoveTo(checkpoint.transform.position));
             }
         }
 
