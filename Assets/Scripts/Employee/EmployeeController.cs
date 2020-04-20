@@ -19,11 +19,16 @@ public class EmployeeController : MonoBehaviour
     private float _walkWaitTime;
     private bool _isWalking;
     private bool _isStopped;
+    private FireManager _fireManager;
+
+    private GameObject _fire;
 
     // Start is called before the first frame update
     void Start()
     {
         _isWalking = false;
+
+        _fireManager = FindObjectOfType<FireManager>();
     }
 
 
@@ -31,6 +36,9 @@ public class EmployeeController : MonoBehaviour
     {
         DisplayEmployeeDetails();
         UpdateWalkingStatus();
+
+        if (_fire != null)
+            _fire.transform.position = transform.position;
     }
 
     public void Initialise(string name, string role, Color color)
@@ -98,6 +106,11 @@ public class EmployeeController : MonoBehaviour
         if (agent != null) agent.SetDestination(_destination);
     }
 
+    public void UrFired()
+    {
+        _fire = _fireManager.CreateFireWithObject(transform.position);
+    }
+
     void SetColor(Color color)
     {
         var material = GetComponent<Renderer>().material;
@@ -114,6 +127,11 @@ public class EmployeeController : MonoBehaviour
         }
 
         return true;
+    }
+
+    void OnDestroy()
+    {
+        Destroy(_fire);
     }
 
 }

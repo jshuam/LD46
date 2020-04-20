@@ -46,7 +46,16 @@ public class FireManager : MonoBehaviour
         }
     }
 
-    public void PutOutFire(GameObject fire){
+    // Start is called before the first frame update
+    public GameObject CreateFireWithObject(Vector3 position)
+    {
+        var fire = Instantiate(flamePrefab, new Vector3(position.x, position.y + 2, position.z + 2), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
+        _fires.Add(fire);
+        return fire;
+    }
+
+    public void PutOutFire(GameObject fire)
+    {
         _fires.Remove(fire);
     }
 }
