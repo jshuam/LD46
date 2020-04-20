@@ -1,56 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _bar = null;
+    public Slider slider;
 
-    [SerializeField]
-    private float _barLength;
+    private float _health = 100;
 
-    [SerializeField]
-    private float _health = 0f;
-
-    [SerializeField]
-    public float maxHealth = 100f;
-
-    private void Start()
-    {
-        _barLength = _bar.localScale.x;
-        setHealth( 100f );
-        _bar.localScale = new Vector3( _barLength * ( _health / maxHealth ), 1f );
+    public void SetMaxHealth(int health){
+        slider.maxValue = health;
+        slider.value = health;
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        _bar.localScale = new Vector3( _barLength * ( _health / maxHealth ), 1f );
+    private void SetHealth(int health){
+        slider.value = health;
     }
 
-    // Set health to specific value
-    public void setHealth(float health = 0f){
-        _health = health;
-    }
-
-    // Subtracts damage as percentage
-    public void TakeDamage(float damage){
-        if(_health - damage < 0f){
-            _health = 0f;
-            return;
+    public void TakeDamage(int damage){
+        if(_health - damage < 0){
+            _health = 0;
         }
-
-        _health -= damage;
+        else {
+            _health -= damage;
+        }
+        slider.value = _health;
     }
 
     public void HealDamage(float damage){
-        if(_health + damage > maxHealth){
-            _health = maxHealth;
-            return;
+        if(_health + damage > slider.maxValue){
+            _health = slider.maxValue;
+        } else {
+            _health += damage;
         }
-
-        _health += damage;
+        slider.value = _health;
     }
-
 }
