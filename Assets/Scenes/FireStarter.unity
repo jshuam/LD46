@@ -570,7 +570,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593271327}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -671,6 +671,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[0].name
+      value: You
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[0].speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[1].speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[1].name
+      value: Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
+      value: Fuck you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
+      value: Do you know how long you've been gone for!?
+      objectReference: {fileID: 0}
     - target: {fileID: 2062566843, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
