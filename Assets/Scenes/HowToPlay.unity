@@ -432,7 +432,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1051, y: 95.751465}
+  m_SizeDelta: {x: 1050.9995, y: 203.93463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054971226
 MonoBehaviour:
@@ -465,22 +465,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '* Press (LSHIFT) to sprint
+  m_Text: '
 
-    * Accuse (F) employees that you believe
-    are creating fires to spread negativity within the office.
+    * Press (LSHIFT) to sprint
 
-    * Upon accusing
-    an employee they will be fired and removed from the office
+    * Accuse (F) employees that you
+    believe are creating fires to spread negativity within the office.
 
-    * If the employee
-    you accused was not in fact spreading negativity, then this will cause other
-    employees to become fire starters
+    * Put
+    Out Fires (F) if you spot them to prevent the company from burning
 
-    * If the employee was spreading negativity
-    and there are no further fire starters, you win
+    * Upon
+    accusing an employee they will be fired and removed from the office
 
-'
+    * If
+    the employee you accused was not in fact spreading negativity, then this will
+    cause other employees to become fire starters
+
+    * If the employee was spreading
+    negativity and there are no further fire starters, you win'
 --- !u!222 &1054971227
 CanvasRenderer:
   m_ObjectHideFlags: 0
