@@ -34,15 +34,15 @@ public class FireManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void CreateFire(float x, float z, bool collide = true)
+    public void CreateFire(Vector3 position, bool collide = true)
     {
         if (collide)
         {
-            _fires.Add(Instantiate(flamePrefab, new Vector3(x, 2, z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f)));
+            _fires.Add(Instantiate(flamePrefab, new Vector3(position.x, position.y + 2, position.z + 2), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f)));
         }
         else
         {
-            Instantiate(noCollisionFlamePrefab, new Vector3(x, 2, z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
+            Instantiate(noCollisionFlamePrefab, new Vector3(position.x, position.y, position.z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
         }
     }
 }

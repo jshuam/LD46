@@ -27,7 +27,7 @@ public class FireStarter : MonoBehaviour
 
             if (hit.collider == null)
             {
-                _fireManager.CreateFire(gameObject.transform.position.x, gameObject.transform.position.z + 2.0f);
+                _fireManager.CreateFire(gameObject.transform.position);
             }
         }
     }

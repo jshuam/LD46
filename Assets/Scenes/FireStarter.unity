@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14eeb97311db23148b5581d65fe44eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flamePrefab: {fileID: 3806695810569152992, guid: 2e8efd29b493e954dadeae10df19274d,
+  flamePrefab: {fileID: 3806695810569152992, guid: 77ff66d626527e844a6a81e52e65b17d,
     type: 3}
   noCollisionFlamePrefab: {fileID: 5716239713985295339, guid: c92502844ebfac240854b0eeffc41a45,
     type: 3}
