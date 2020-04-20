@@ -45,4 +45,8 @@ public class FireManager : MonoBehaviour
             Instantiate(noCollisionFlamePrefab, new Vector3(position.x, position.y, position.z), Quaternion.identity * Quaternion.Euler(-90f, 0f, 0f));
         }
     }
+
+    public void PutOutFire(GameObject fire){
+        _fires.Remove(fire);
+    }
 }
