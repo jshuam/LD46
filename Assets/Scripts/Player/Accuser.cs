@@ -81,6 +81,7 @@ public class Accuser : MonoBehaviour
                 _isAccusing = true;
                 _hit.collider.gameObject.GetComponent<EmployeeController>().UrFired();
                 Destroy(_hit.collider.gameObject, 2.0f);
+                Invoke("EndAccuse", 2.0f);
             }
         }
     }
