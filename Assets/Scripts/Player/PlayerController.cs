@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 10.0f;
     [SerializeField] private Camera mainCamera = null;
 
-    [SerializeField] private HealthBarScript healthBar = null;
+    [SerializeField] private HealthBar healthBar = null;
 
     private int companyHealth = 0;
 

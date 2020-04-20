@@ -22,6 +22,8 @@ public class EmployeeManager : MonoBehaviour
     [SerializeField] private List<GameObject> destinationPoints = new List<GameObject>();
     [SerializeField] private GameObject spawneePreFab = null;
 
+    private FireStarterManager _fireStartermanager = null;
+
     List<EmployeeController> _employees;
     bool _isInitialSpawningComplete;
     bool _isInitialised;
@@ -32,8 +34,11 @@ public class EmployeeManager : MonoBehaviour
         _isInitialised = false;
         _rand = new System.Random();
         _employees = new List<EmployeeController>();
-        StartCoroutine(SpawnEmployees(0));
+        SpawnEmployees(0);
         _isInitialised = true;
+
+        _fireStartermanager = FindObjectOfType<FireStarterManager>();
+        _fireStartermanager.CreateFireStarters();
     }
 
     public void Update()
@@ -48,16 +53,16 @@ public class EmployeeManager : MonoBehaviour
             }
         }
 
-        if ((_spawnInBatches && !_isInitialSpawningComplete) || _isRespawningEnabled) StartCoroutine(SpawnEmployees(Random.Range(1, 3)));
+        if ((_spawnInBatches && !_isInitialSpawningComplete) || _isRespawningEnabled) SpawnEmployees(Random.Range(1, 3));
     }
 
 
-    public System.Collections.IEnumerator SpawnEmployees(int spawnWaitTime)
+    public void SpawnEmployees(int spawnWaitTime)
     {
         var end = _spawnInBatches ? Mathf.Min(_employees.Count + _batchSize, _spawneeSize) : _spawneeSize;
         var randomNames = names.OrderBy(x => _rand.Next()).ToArray();
 
-        yield return new WaitForSeconds(spawnWaitTime);
+        // yield return new WaitForSeconds(spawnWaitTime);
 
         for (var i = _employees.Count; i < end; i++)
         {
