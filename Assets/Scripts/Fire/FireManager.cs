@@ -53,4 +53,9 @@ public class FireManager : MonoBehaviour
         _fires.Add(fire);
         return fire;
     }
+
+    public void PutOutFire(GameObject fire)
+    {
+        _fires.Remove(fire);
+    }
 }
