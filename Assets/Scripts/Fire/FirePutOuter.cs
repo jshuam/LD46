@@ -13,16 +13,16 @@ public class FirePutOuter : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * 1f, Color.blue);
+        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * 2.5f, Color.red);
         FireDetect();
         PutOutFire();
     }
 
     void FireDetect()
     {
-        Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out _hit, 1f);
+        Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out _hit, 2.5f);
 
-        if ( _hit.collider != null && _hit.transform.tag == "Flame" )
+        if (_hit.collider != null && _hit.transform.tag == "Flame")
         {
             putOutFireText.SetActive(true);
         }
@@ -36,7 +36,7 @@ public class FirePutOuter : MonoBehaviour
     {
         if (putOutFireText.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
-            Destroy( _hit.transform.gameObject );
+            Destroy(_hit.transform.gameObject);
         }
     }
 }
