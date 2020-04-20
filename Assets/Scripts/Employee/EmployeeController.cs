@@ -23,7 +23,6 @@ public class EmployeeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tag = "Employee";
         _isWalking = false;
     }
 
@@ -75,7 +74,7 @@ public class EmployeeController : MonoBehaviour
         var walkWait = Random.Range(1, _maxWalkWaitTime);
         yield return new WaitForSeconds(walkWait);
 
-        agent.SetDestination(_destination);
+        if (agent != null) agent.SetDestination(_destination);
     }
 
     public void SetManager(EmployeeManager manager)

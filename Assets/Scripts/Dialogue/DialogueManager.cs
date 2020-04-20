@@ -5,28 +5,32 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text dialogueText;
+    public GameObject dialogue;
     public Queue<string> sentences;
-    private bool anyDialogue = false;
-    public CanvasGroup canvasGroup;
+    
+    private CanvasGroup canvasGroup;
+    private Text dialogueText;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        dialogueText = dialogue.GetComponent<Text>();
+        canvasGroup = dialogue.GetComponent<CanvasGroup>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        sentences.Clear();
-
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue("<color=yellow>" + dialogue.name + "</color>: " + sentence);
         }
 
-        StartCoroutine(FadeDialogueToFullAlpha(0.7f));
-        InvokeRepeating("DisplayNextSentence", 0.0f, dialogue.speed);
+        if( canvasGroup.alpha == 0 )
+        {
+            StartCoroutine(FadeDialogueToFullAlpha(0.7f));
+            InvokeRepeating("DisplayNextSentence", 0.0f, dialogue.speed);
+        }
     }
 
     public void DisplayNextSentence()

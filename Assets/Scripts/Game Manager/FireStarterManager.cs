@@ -11,12 +11,6 @@ public class FireStarterManager : MonoBehaviour
     private System.Random _random = new System.Random();
     private int _fireStarterLimit = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        CreateFireStarters();
-    }
-
     // Update is called once per frame
     public void SpreadNegativity()
     {
@@ -25,7 +19,7 @@ public class FireStarterManager : MonoBehaviour
         CreateFireStarters();
     }
 
-    private void CreateFireStarters()
+    public void CreateFireStarters()
     {
         if (_employeesParent.GetComponentsInChildren<FireStarter>().Length == _employeesParent.transform.childCount)
             return;

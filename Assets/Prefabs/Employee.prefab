@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 4086116584130352855}
   - component: {fileID: 1350325191429650253}
   m_Layer: 0
-  m_Name: EmployeeSpawn
-  m_TagString: Untagged
+  m_Name: Employee
+  m_TagString: Employee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
