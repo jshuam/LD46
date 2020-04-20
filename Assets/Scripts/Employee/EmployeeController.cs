@@ -23,6 +23,7 @@ public class EmployeeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tag = "Employee";
         _isWalking = false;
     }
 
