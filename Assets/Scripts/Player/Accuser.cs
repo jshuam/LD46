@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Accuser : MonoBehaviour
@@ -78,6 +78,7 @@ public class Accuser : MonoBehaviour
                     }
                 }
 
+                accuseText.GetComponent<Text>().color = Color.grey;
                 _isAccusing = true;
                 _hit.collider.gameObject.GetComponent<EmployeeController>().UrFired();
                 Destroy(_hit.collider.gameObject, 2.0f);
@@ -89,5 +90,6 @@ public class Accuser : MonoBehaviour
     private void EndAccuse()
     {
         _isAccusing = false;
+        accuseText.GetComponent<Text>().color = Color.red;
     }
 }
