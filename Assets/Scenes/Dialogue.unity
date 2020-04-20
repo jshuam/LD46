@@ -735,8 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b56d42632192e04d98bc4cf0a4b3035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 905713060}
-  canvasGroup: {fileID: 905713063}
+  dialogue: {fileID: 905713058}
 --- !u!4 &2122777757
 Transform:
   m_ObjectHideFlags: 0

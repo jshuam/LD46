@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text dialogueText;
+    public GameObject dialogue;
     public Queue<string> sentences;
-    private bool anyDialogue = false;
-    public CanvasGroup canvasGroup;
+    
+    private CanvasGroup canvasGroup;
+    private Text dialogueText;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        dialogueText = dialogue.GetComponent<Text>();
+        canvasGroup = dialogue.GetComponent<CanvasGroup>();
     }
 
     public void StartDialogue(Dialogue dialogue)
