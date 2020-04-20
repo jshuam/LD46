@@ -7,10 +7,6 @@ public class EmployeeManager : MonoBehaviour
 {
     static readonly string[] names = { "Poopy Eyes", "Two Face", "Monster Monster", "Stinky Shrek", "Cancer", "Giga Chad", "Emperor" };
     static readonly string[] roles = { "Master", "Nemesis", "Loyal Crook", "Stinky Crook", "Cancer Crook", "Padawan" };
-    [SerializeField] private int _maxSpeed = 10;
-    [SerializeField] private int _maxWalkWaitTime = 10;
-    [SerializeField] private float _destinationThreshold = 10.0f;
-    [SerializeField] private float _maxRotSpeed = 100.0f;
     [SerializeField] private Transform _employeesParent = null;
     [SerializeField] private int _spawneeSize = 0;
 
@@ -49,7 +45,7 @@ public class EmployeeManager : MonoBehaviour
             if (!employee.IsWalking())
             {
                 var checkpoint = destinationPoints[_rand.Next(destinationPoints.Count)];
-                // StartCoroutine(employee.MoveTo(checkpoint.transform.position));
+                StartCoroutine(employee.MoveTo(checkpoint.transform.position));
             }
         }
 
@@ -75,10 +71,9 @@ public class EmployeeManager : MonoBehaviour
     public void SpawnEmployee(string name, string role, Vector3 spawnPoint)
     {
         var employeeGameObj = Instantiate(spawneePreFab, spawnPoint, Quaternion.identity, _employeesParent);
-        var employeeAgent = employeeGameObj.GetComponent<NavMeshAgent>();
         var employeeScript = employeeGameObj.GetComponent<EmployeeController>();
 
-        employeeScript.Initialise(name, role, _maxSpeed, _maxWalkWaitTime, _destinationThreshold, _maxRotSpeed, employeeAgent, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+        employeeScript.Initialise(name, role,  Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
         _employees.Add(employeeScript);
     }
 }

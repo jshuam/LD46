@@ -11,19 +11,20 @@ public class EmployeeController : MonoBehaviour
 
     [SerializeField] private int _maxSpeed;
     [SerializeField] private int _maxWalkWaitTime;
+    [SerializeField] private float _maxRotSpeed;
     [SerializeField] private float _destinationReachedThreshold;
-    [SerializeField] private float _rotSpeed;
 
-    private EmployeeManager manager;
     private Vector3 _destination;
     private float _speed;
     private float _walkWaitTime;
     private bool _isWalking;
+    private bool _isStopped;
 
     // Start is called before the first frame update
     void Start()
     {
         _isWalking = false;
+
     }
 
     // Update is called once per frame
@@ -34,36 +35,22 @@ public class EmployeeController : MonoBehaviour
             _isWalking = false;
         }
     }
-    public void Initialise(string name, string role, int maxSpeed, int maxWalkWaitTime, float destinationThreshold, float maxRotSpeed, NavMeshAgent agent, Color color)
+
+    public void Initialise(string name, string role, Color color)
     {
         fullName = name;
         this.role = role;
-        this.agent = agent;
-
-        _maxSpeed = maxSpeed;
-        _maxWalkWaitTime = maxWalkWaitTime;
-        _rotSpeed = Random.Range(Mathf.Max(100f, maxRotSpeed), Mathf.Max(100f, maxRotSpeed));
         _speed = Random.Range(1, _maxSpeed);
-        _destinationReachedThreshold = destinationThreshold;
         _walkWaitTime = Random.Range(1, _maxWalkWaitTime);
-        this.agent.speed = _speed;
-        this.agent.angularSpeed = _rotSpeed;
+        agent.speed = _speed;
+        agent.angularSpeed = Random.Range(100f, Mathf.Max(_maxRotSpeed, 100f));
+
         SetColor(color);
     }
 
     public bool IsWalking()
     {
         return _isWalking;
-    }
-
-    public void StopWalking()
-    {
-        _isWalking = false;
-    }
-
-    public void ResumWalking()
-    {
-
     }
 
     public IEnumerator MoveTo(Vector3 target)
@@ -75,11 +62,6 @@ public class EmployeeController : MonoBehaviour
         yield return new WaitForSeconds(walkWait);
 
         if (agent != null) agent.SetDestination(_destination);
-    }
-
-    public void SetManager(EmployeeManager manager)
-    {
-        this.manager = manager;
     }
 
     void SetColor(Color color)

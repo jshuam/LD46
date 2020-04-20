@@ -671,6 +671,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 708401432, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388545709, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1977562126, guid: dd1b23b5b48334b4db3c16764cb40c8f, type: 3}
       propertyPath: dialogues.Array.size
       value: 2
