@@ -19,6 +19,7 @@ public class GameOverManager : MonoBehaviour
 
     void GoToGameOverMenu()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene( 6, LoadSceneMode.Single );
     }
 }
