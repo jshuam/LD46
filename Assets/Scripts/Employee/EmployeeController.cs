@@ -53,6 +53,18 @@ public class EmployeeController : MonoBehaviour
         return _isWalking;
     }
 
+    public void StopMate(Vector3 directionToFace)
+    {
+        agent.SetDestination(transform.position);
+        var targetRotation = Quaternion.LookRotation(directionToFace - transform.position,Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 3.0f);
+    }
+
+    public void GoOnMate()
+    {
+        agent.SetDestination(_destination);
+    }
+
     public IEnumerator MoveTo(Vector3 target)
     {
         _isWalking = true;

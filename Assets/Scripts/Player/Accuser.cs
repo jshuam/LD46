@@ -8,6 +8,7 @@ public class Accuser : MonoBehaviour
 
     private FireStarterManager _fireStarterManager = null;
     private RaycastHit _hit;
+    private EmployeeController stoppedEmployee = null;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,10 @@ public class Accuser : MonoBehaviour
         {
             if (_hit.collider.CompareTag("Employee"))
             {
+                var employee = _hit.collider.gameObject.GetComponent<EmployeeController>();
+                employee.StopMate(transform.position);
                 accuseText.SetActive(true);
+                stoppedEmployee = employee;
             }
             else
             {
@@ -38,6 +42,11 @@ public class Accuser : MonoBehaviour
         if (_hit.collider == null)
         {
             accuseText.SetActive(false);
+            if (stoppedEmployee != null)
+            {
+                stoppedEmployee.GoOnMate();
+                stoppedEmployee = null;
+            }
         }
     }
 
