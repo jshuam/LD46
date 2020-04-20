@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Accuser : MonoBehaviour
 {
@@ -52,6 +53,14 @@ public class Accuser : MonoBehaviour
                 if (_hit.collider.gameObject.GetComponent<FireStarter>() == null)
                 {
                     _fireStarterManager.SpreadNegativity();
+                }
+                else 
+                {
+                    _fireStarterManager.FireStarterRemoved();
+                    // it was a firestarter, so decrement the count and check to see if victory
+                    if(_fireStarterManager.checkIfVictory()){
+                        SceneManager.LoadScene(5, LoadSceneMode.Single);
+                    }
                 }
 
                 Destroy(_hit.collider.gameObject, 2.0f);

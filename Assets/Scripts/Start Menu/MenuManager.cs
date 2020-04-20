@@ -16,6 +16,6 @@ public class MenuManager : MonoBehaviour
 
     public void StartHowToPlayScene()
     {
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 }

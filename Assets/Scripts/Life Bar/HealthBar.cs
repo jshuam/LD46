@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class HealthBar : MonoBehaviour
             _health -= damage;
         }
         slider.value = _health;
+
+        if(_health == 0){
+            SceneManager.LoadScene(4, LoadSceneMode.Single);
+        }
     }
 
     public void HealDamage(float damage){
