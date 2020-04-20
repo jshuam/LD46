@@ -26,7 +26,7 @@ public class Accuser : MonoBehaviour
     {
         if (Physics.Raycast(gameObject.transform.position, mainCamera.transform.forward * 2.5f, out _hit, 2.5f))
         {
-            if (_hit.collider.gameObject.tag == "Employee")
+            if (_hit.collider.CompareTag("Employee"))
             {
                 accuseText.SetActive(true);
             }
